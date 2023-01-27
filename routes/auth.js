@@ -57,7 +57,7 @@ function validate1(result) {
   const Schema = Joi.object({
     name: Joi.string().min(2).required(),
     email: Joi.string().required().email(),
-    password: Joi.string().min(8).required(),
+    password: Joi.string().min(6).required(),
   });
 
   return Schema.validate(result);
