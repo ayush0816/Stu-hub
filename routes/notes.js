@@ -49,7 +49,7 @@ router.put("/update/:id", fetchUser, async (req, res) => {
 
 router.delete("/delete/:id", fetchUser, async (req, res) => {
   let note = await Notes.findById(req.params.id);
-  if (!note) return res.status(400).send("Note not found");
+  if (!note) return res.status(300).send("Note not found");
 
   if (note.user.toString() !== req.id) {
     return res.status(400).send("Access denied");
